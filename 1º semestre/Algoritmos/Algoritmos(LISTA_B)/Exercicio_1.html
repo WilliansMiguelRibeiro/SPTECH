@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 1</title>
+</head>
+
+<!--
+  1.Crie um programa em HTML/JS o qual:
+  a) Tenha o campo "Cidade Natal"
+  b) Tenha o campo "Ano de nascimento"
+  c) Tenha o botão "Cadastrar"
+  d) Ao clicar no botão, deve aparecer 1 (um) alert com a frase
+     Você nasceu na cidade de X em Y
+     Onde X é o valor do campo em a) e Y é o valor do campo em b)
+-->
+
+<body>
+  
+    <input id="natal" type="text" placeholder="Cidade Natal">  <br>
+    <input id="nascimento" type="text" placeholder="Ano de nascimento">  <br><br>
+    
+    <button onclick="cadas()">Cadastrar</button>
+
+</body>
+</html> 
+
+<script>
+    
+    function cadas() {
+    
+        alert (`vc nasceu na cidade ${natal.value} em ${nascimento.value}`);
+    
+    }
+    
+ </script> 

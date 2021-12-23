@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 15</title>
+</head>
+<body>
+    
+<!--
+  15. Refaça o  programa da questão anterior de tal forma que, ao clicar em "Resultado da Eleição", sejam exibidos textos e "barras" conforme o exemplo abaixo:
+  As alturas das "barras" é de 30px. Suas larguras são sempre uma porcentagem, de acordo com a porcentagem do total de votos calculada. 
+  Ex: Na figura, a barra verde tem 40% no width de seu style.
+-->
+
+    Quantidade de votos de Zé Buduia:
+    <input id="primeiro_num" type="text" placeholder="Total de votos"><br>
+    <div id="div_buduia" style="height: 30px;width: 100%; background-color: blue;"></div><br>
+
+    Quantidade de votos de Maria Bigodenha:
+    <input id="segundo_num" type="text" placeholder="Total de votos"><br>
+    <div id="div_maria" style="height: 30px;width: 100%; background-color: pink;"></div><br>
+    
+    Quantos votos brancos houveram na eleição:
+    <input id="terceiro_num" type="text" placeholder="Total de votos"><br>
+    <div id="div_branco" style="height: 30px;width: 100%; background-color: purple;"></div><br>
+    
+    Quantos votos nulos houveram na eleição:
+    <input id="quarto_num" type="text" placeholder="Total de votos"><br>
+    <div id="div_nulo" style="height: 30px;width: 100%; background-color: green;"></div><br>
+    
+    <button onclick="votos()">Resultado da eleição</button>
+    
+    <div id="result"></div>
+
+</body>
+</html>
+
+<script>
+  
+  function votos(){
+
+     var total = Number(primeiro_num.value) + Number(segundo_num.value) + Number(terceiro_num.value) + Number(quarto_num.value);
+     var buduia = primeiro_num.value * 100 / (Number(primeiro_num.value) + Number(segundo_num.value) + Number(terceiro_num.value) + Number(quarto_num.value));
+     var maria = segundo_num.value * 100 / (Number(primeiro_num.value) + Number(segundo_num.value) + Number(terceiro_num.value) + Number(quarto_num.value));
+     var invalido = (Number(terceiro_num.value) + Number(quarto_num.value)) * 100 / (Number(primeiro_num.value) + Number(segundo_num.value) + Number(terceiro_num.value) 
+      + Number(quarto_num.value));
+
+    result.innerHTML = `
+    Total de votos: ${total}<br>
+    
+    Zé Buduia: ${buduia}%<br>
+    
+    Maria Bigodenha: ${maria}%<br> 
+    
+    Inválidos: ${invalido}%<br>`;
+
+     div_buduia.style.width = `${buduia}%`;
+     div_maria.style.width = `${maria}%`;
+     div_branco.style.width = `${invalido}%`;
+     div_nulo.style.width = `${invalido}%`;
+
+    }
+    
+</script>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 8</title>
+</head>
+<body>
+    
+<!--
+  8. Crie um programa em HTML/JS o qual:
+  a) Solicite o salário de um trabalhador
+  b) Ao clicar no botão "Calcular Descontos", calcular...
+  c) O desconto de INSS, que é de 10% do salário informado no item a). Para calular 10% de um número, a forma mais simples é multiplicar ele por 0.1
+  d) O desconto de IR (Imposto de Renda), que é de 20% do salário informado no item a). Para calular 20% de um número, a forma mais simples é multiplicar ele por 0.2
+  e) Exibir abaixo do botão um texto com este:
+    Seus descontos serão de:
+    INSS: R$A
+    IR: R$B
+    Total de descontos: R$C
+    Seu salário, após os descontos será de: R$D
+    Onde A é o valor calculado em c). B é o valor calculado em d). C é a soma de A+B. O valor de D é o salário informado em a) menos C.
+ 
+-->
+
+Insira o seu salário:
+<input id="salario" type="text" placeholder="Insira seus dados"><br><br>
+
+<button onclick="descontos()">Calcular Descontos</button><br><br>
+
+<span id="result"></span>
+
+</body>
+</html>
+
+<script>
+
+  function descontos(){
+
+    result.innerHTML = `Seus descontos serão de:<br>
+    INSS: R$${(10/100) * salario.value}<br>
+    IR: R$${(20/100) * salario.value}<br>
+    Total de desconto: R$${(10/100) * Number(salario.value) + (20/100) * Number(salario.value)}<br>
+    Seu salário, após os descontos será de: R$${salario.value - ((10/100) * Number(salario.value) + (20/100) * Number(salario.value))} <br>`
+  }
+
+</script>

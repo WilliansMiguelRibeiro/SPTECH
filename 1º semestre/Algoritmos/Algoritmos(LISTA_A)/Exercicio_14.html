@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 14</title>
+</head>
+<body>
+    <!--
+        14. Crie um programa em HTML/JS a qual: 
+        a) Tenha os botões "Gente tímida" e "Gente que causa" 
+        b) Abaixo dos botões já deve aparecer a foto de uma pessoa com cara de confiante 
+        c) Ao clicar no primeiro botão, a foto some 
+        d) Ao clicar no segundo botão, a foto aparece 
+    -->
+
+<button onclick="timida()">Gente tímida</button>
+<button onclick="causar()">Gente que causa</button><br><br>
+
+<div id="sumir"><img style="height: 50mm;" 
+    src="https://media.istockphoto.com/photos/this-boys-got-confidence-picture-id520001457">
+</div>
+
+</body>
+</html>
+
+<script>
+   
+   function timida() {
+       sumir.innerHTML = '';
+   }
+
+   function causar() {
+      sumir.innerHTML = '<img style="height: 50mm;" src="https://media.istockphoto.com/photos/this-boys-got-confidence-picture-id520001457">';
+   }
+
+</script>

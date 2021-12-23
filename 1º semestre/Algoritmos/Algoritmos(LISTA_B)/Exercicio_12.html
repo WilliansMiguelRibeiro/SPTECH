@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 12</title>
+</head>
+<body>
+    
+    <!--12. Refaça a questão anterior de tal forma que a frase final - 
+    a do item e) - apareça acompanhada de uma foto de Sayajin na forma escolhida. A foto pode ficar antes ou depois ou abaixo da frase, tanto faz.
+    -->
+
+    Insira a força base do guerreiro Sayajin:
+
+    <input id="ki" type="text" placeholder="ki base"><br><br>
+
+    Tranformar em...<br><br>
+
+    <button onclick="ss1()">SSJ</button>
+    <button onclick="ss2()">SSJ2</button>
+    <button onclick="ss3()">SSJ3</button><br><br>
+
+    <div id="total"></div>
+
+</body>
+</html>
+
+<script>
+
+    function ss1(){
+    
+        total.innerHTML = `Após se tranformar em Super Sayajin 1, o ki desse Sayajin passa a ser de ${ki.value * 50}<br><br>
+        <img style="height: 200px;" src="https://pm1.narvii.com/6392/730b7cd7eb5257f24232123679362a6348652206_hq.jpg">`;
+    
+    }
+    function ss2(){
+    
+        total.innerHTML = `Após se tranformar em Super Sayajin 2, o ki desse Sayajin passa a ser de ${ki.value * 100}<br><br>
+        <img style="height: 200px;" src="https://i.pinimg.com/736x/15/6f/2c/156f2c1a37cdd0a99571265415ae0e1d.jpg">`;
+    
+    }
+    function ss3(){
+    
+        total.innerHTML = `Após se tranformar em Super Sayajin 3, o ki desse Sayajin passa a ser de ${ki.value * 200}<br><br>
+        <img style="height: 200px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCmCYqcDn8EYBv-9wbqe8OZublKgDpbsfUAA&usqp=CAU">`;
+    
+    }
+    
+    </script>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 17</title>
+</head>
+<body>
+    
+<!--
+    17. Crie um programa em HTML/JS a qual: 
+    a) Tenha um título grande no inicio "A história de uma pizza" 
+    b) Tenha os botões "Acabou de chegar", "Depois de 1 minuto", "Depois de 5 minutos" e "Depois de 15 minutos" 
+    c) Ao clicar no 1º botão, aparece, abaixo dos botões, a foto de uma pizza inteira 
+    d) Ao clicar no 2º botão, aparece, abaixo dos botões, a foto de uma pizza inteira com uma ou duas fatias tiradas 
+    e) Ao clicar no 3º botão, aparece, abaixo dos botões, a foto de uma pizza pela metade 
+    f) Ao clicar no 4º botão, aparece, abaixo dos botões, a foto de um prato vazio (ou com restos de uma pizza, se achar uma imagem assim) 
+-->
+
+<h1>A história de uma pizza</h1>
+
+<button onclick="chega()">Acabou de chegar</button>
+<button onclick="pizza()">Depois de 1 minuto</button>
+<button onclick="lento()">Depois de 5 minutos</button>
+<button onclick="atrasado()">Depois de 15 minutos</button><br><br>
+
+<div id="foco"></div>
+
+</body>
+</html>
+
+<script>
+
+   function chega(){
+
+      foco.innerHTML = '<img style="width: 100mm;" src="https://static1.casapraticaqualita.com.br/articles/2/77/2/@/809-a-pizza-de-calabresa-e-uma-das-mais-sabo-opengraph_1200-2.jpg">';
+
+   }
+   function pizza(){
+
+      foco.innerHTML = '<img style="width: 100mm;" src="https://thumbs.dreamstime.com/b/pizza-cortada-deliciosa-em-uma-grande-placa-redonda-130597037.jpg">'; 
+
+   }
+   function lento(){
+
+      foco.innerHTML = '<img style="width: 100mm;" src="https://media.istockphoto.com/photos/half-pizza-picture-id92113210">';
+
+   }
+   function atrasado(){
+
+      foco.innerHTML = '<img style="width: 100mm;" src="https://uploads.metropoles.com/wp-content/uploads/2020/12/04154719/pizza-comida-1024x682.jpg">';
+
+   }
+
+</script>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 7</title>
+</head>
+
+<body>
+    <!--
+     7. Crie um programa em HTML/JS o qual: 
+     a) Tenha um botão "Boas-vindas no alerta". Ao clicar nele, aparece um alert na página com alguma mensagem de boas vindas 
+     b) Tenha um botão "Boas-vindas na página". Ao clicar nele, aparece na própria página, abaixo dos botões alguma mensagem de boas vindas 
+    -->
+     
+    <button onclick="alerta()">Boas-vindas no alerta</button>
+    <button onclick="welcome()">Boas-vindas na página</button>
+    
+    <div id="bom"></div>
+
+</body>
+
+</html>
+
+<script>
+
+    function alerta(){
+        alert("Bem-vindo");
+    }
+    
+    function welcome(){
+        bom.innerHTML = "Seja Bem-vindo";
+    }
+
+</script>

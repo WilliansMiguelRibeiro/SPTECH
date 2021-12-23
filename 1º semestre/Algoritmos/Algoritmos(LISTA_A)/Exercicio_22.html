@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 22</title>
+</head>
+<body>
+
+  <!--
+    22 (desafio). Refaça a questão anterior de tal forma que: 
+     a) Inicialmente, as cores dos semáforos estejam "fracas" 
+     b) Ao clicar numa das luzes, somente ela fica "forte" e as demais continuam "fracas" 
+     OBS: Use apenas as técnicas ensinadas em aula até agora. 
+  -->
+
+   <img id="verm" onclick="vermelho()" style="height: 150px;" src="https://media.discordapp.net/attachments/818302788605181997/884490205078384660/Circulo_vermelho_fosco.jpg"><br>
+   <img id="amar" onclick="amarelo()" style="height: 150px;" src="https://media.discordapp.net/attachments/818302788605181997/884490195280474232/Circulo_amarelo_fosco.jpg"><br>
+   <img id="verd" onclick="verde()" style="height: 150px;" src="https://media.discordapp.net/attachments/818302788605181997/884490203467763782/Circulo_verde_fosco.jpg?width=630&height=630"><br><br><br>
+
+   <div id="atencao"></div>
+
+</body>
+</html>
+
+<script>
+
+    function vermelho(){
+
+        atencao.innerHTML = '<span style="background-color: red; color: white;"> Pare! Aguarde o verde! </span>';
+        verm.src = `https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwGm3-p40NmT9OueXHU0krqAMpUq3_UYZerg4r68GksJp0takfBnJzh6WFRsmnMf9NnxQ&usqp=CAU`;
+        amar.src =`https://media.discordapp.net/attachments/818302788605181997/884490195280474232/Circulo_amarelo_fosco.jpg`;
+        verd.src =`https://media.discordapp.net/attachments/818302788605181997/884490203467763782/Circulo_verde_fosco.jpg?width=630&height=630`;
+
+    }
+
+    function amarelo(){
+
+      atencao.innerHTML = '<span style="background-color: orange; color: black;"> Só siga se estiver perto e rápido </span>';
+      amar.src = `https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQx1k86rzDUF-PgC0POApikS-CetONeAteq6A&usqp=CAU`;
+      verm.src =`https://media.discordapp.net/attachments/818302788605181997/884490205078384660/Circulo_vermelho_fosco.jpg`;
+      verd.src =`https://media.discordapp.net/attachments/818302788605181997/884490203467763782/Circulo_verde_fosco.jpg?width=630&height=630`;
+
+    }
+
+    function verde(){
+
+      atencao.innerHTML = ' <span style="background-color: green; color: white;"> Siga! </span>';
+      verd.src = `https://emojis.wiki/emoji-pics/microsoft/green-circle-microsoft.png`;
+      verm.src =`https://media.discordapp.net/attachments/818302788605181997/884490205078384660/Circulo_vermelho_fosco.jpg`;
+      amar.src =`https://media.discordapp.net/attachments/818302788605181997/884490195280474232/Circulo_amarelo_fosco.jpg`;
+
+    }
+
+</script>
