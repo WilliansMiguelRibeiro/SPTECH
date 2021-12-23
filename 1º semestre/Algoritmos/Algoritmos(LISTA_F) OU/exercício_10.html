@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 10</title>
+</head>
+<body>
+
+    <!--
+        10. Augusto Bivio é aluno Bandtec e bolou um critério para indicar em  quais empresa teria preferência em ir trabalhar. 
+        Seus critérios são: A bolsa deve ser pelo menos 1800 ou o VR pelo menos 20 ou deve ficar a no máximo 30 minutos de tempo de 
+        deslocamento da faculdade. Se um desses 3 critérios for ok, a empresa está entre suas preferências. Assim, crie um programa em HTML/JS o qual:
+         a) Solicite o nome da empresa
+         b) Solicite o valor da bolsa da empresa
+         c) Solicite o valor do VR da empresa
+         d) Solicite o tempo de descolamento da empresa para a Bandtec
+         e) Ao clicar em "É preferida?", mostre uma dessas mensagens na própria página, abaixo do botão:
+         "A empresa X é uma de suas preferências", caso a empresa atenda a pelo menos um dos critérios aqui explicados
+         "A empresa X está fora da sua lista", caso contrário
+    -->
+
+    <p>
+        Nome da empresa:
+    </p>
+
+    <input id="ipt_name">
+
+    <p>
+        Valor da bolsa da empresa:
+    </p>
+
+    <input id="ipt_bag">
+
+    <p>
+        Valor do VR da empresa:
+    </p>
+
+    <input id="ipt_value">
+
+    <p>
+        Tempo de deslocamento da empresa para a Badtec:
+    </p>
+
+    <input id="ipt_move">
+
+    <button onclick="but_favorite()">
+        É preferida?
+    </button>
+    
+   <div id="div_mostrar"></div>
+
+</body>
+</html>
+
+<script>
+    function but_favorite(){
+        var ax_name = ipt_name.value;
+        var ax_bag = ipt_bag.value;
+        var ax_value = ipt_value.value;
+        var ax_move = ipt_move.value;
+
+        if(ax_bag >= 1800 || ax_value >= 20 || ax_move >= 30){
+           div_mostrar.innerHTML = `A empresa ${ax_name} é uma de suas preferências`;
+        }
+        else{
+            div_mostrar.innerHTML = `A empresa ${ax_name}está fora da sua lista`;
+        }
+    }
+</script>

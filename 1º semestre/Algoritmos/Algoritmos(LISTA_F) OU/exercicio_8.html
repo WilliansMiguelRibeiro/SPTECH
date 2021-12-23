@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Exercício 8 </title>
+</head>
+<body>
+
+    <!--
+        8 (Desafio). Vamos melhorar o exercício anterior. Crie um programa em HTML/JS o qual:
+        a) Tenha o seguinte texto no topo:
+        Calculadora de cansaço aprimorada do aluno Bandtec.
+        b) Tenha o texto "Meio de transporte" e uma combo para o usuário escolher o meio de transporte dele, podendo ser:
+        Ônibus.
+        Metrô.
+        Carro.
+        Bicicleta.
+        c) Tenha um input de texto para o usuário digitar a distância da casa dele até a faculdade, com o texto "Distância da faculdade (KM)" ao lado.
+        d) Tenha o botão "Calcular cansaço" que ao clicar mostrar em um alerta o nível de cansaço do usuário.
+        e) Se a distância da faculdade for de ATÉ 10 KM:
+        SE o meio de transporte for "Carro" OU "Metrô" OU "Ônibus" exiba um alert com a frase ("Tá tranks ...").
+        SENÃO exiba um alert com a frase ("É ... um pouco cansado ...").
+        f) Se a distância da faculdade for MAIOR que 10 KM:
+        SE o meio de transporte for "Carro" exiba um alert com a frase ("É ... um pouco cansado ...");
+        SE o meio de transporte for "Metrô" OU "Ônibus" exiba um alert com a frase ("Bem cansado ...").
+        SE o meio de transporte for "Bicicleta" exiba um alert com a frase ("Vish ... tá só o pó ...").
+    -->
+
+ <h1>
+    Calculadora de cansaço aprimorada do aluno Bandtec
+ </h1>
+
+ <p>
+    Meio de transporte
+ </p>
+
+ <select id="sel_transporte">
+    <option value="1">Ônibus</option>
+    <option value="2">Metrô</option>
+    <option value="3">Carro</option>
+    <option value="4">Bicicleta</option>
+ </select>
+    
+ <input id="ipt_distance" type="text">
+
+ <b>
+    <u>
+        Distância da faculdade (KM)
+    </u>
+ </b><br><br>
+
+ <button onclick="but_tired()">
+    Calcular cansaço
+ </button>
+
+</body>
+</html>
+
+<script>
+
+    function but_tired(){
+      ax_distance = ipt_distance.value;
+      ax_transporte = sel_transporte.value;
+
+        if(ax_distance <= 10){
+          if(ax_transporte == 2 || ax_transporte == 3 || ax_transporte == 4){
+              alert('Tá tranks ...');
+            }
+          else{
+              alert('É ... um pouco cansado ...');
+            }
+        }
+        else{
+            if(ax_transporte == 2){
+                alert('Bem cansado ...');
+            }
+            else if(ax_transporte == 3){
+                alert('É ... um pouco cansado ...');
+            }
+            else if(ax_transporte == 4){
+                alert('Vish ... tá só o pó ...');
+            }
+        }
+    }
+</script>
+
+

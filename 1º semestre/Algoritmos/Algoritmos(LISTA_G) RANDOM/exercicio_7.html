@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 7</title>
+</head>
+<body>
+    <!--
+        7. Crie um programa em HTML/JS o qual:
+         a) Sorteia e exibe da tela um número entre 1 e 15 após clicar num botão "Quero um cabalístico"
+         b) Se o número sorteado for cabalístico dentre estes: 3, 4, 7, 10 ou 12. Somente nesses casos, aparece uma frase abaixo do botão 
+         dizendo "Eu S2 números cabalísticos!".
+         c) Se não for sorteado um número dentre os desejados, exiba "Ah, me dá um número bom na próxima!"
+    -->
+
+    <button onclick="but_number()">
+        Quero um cabalístico
+    </button><br><br>
+
+    <div id="div_show"></div>
+    
+</body>
+</html>
+
+<script>
+    function but_number(){
+        var ax_random = (Math.random()* 14 + 1).toFixed();
+
+        div_show.innerHTML = `${ax_random}<br>`;
+
+        if(ax_random == 3 || ax_random == 4 || ax_random == 7 || ax_random == 10 || ax_random == 12){
+          div_show.innerHTML += `Eu S2 números cabalísticos!`;
+        }
+        else{
+          div_show.innerHTML += `Ah, me dá um número bom na próxima!`;
+        }
+    }
+</script>

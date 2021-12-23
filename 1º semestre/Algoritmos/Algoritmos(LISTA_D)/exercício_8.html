@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 8</title>
+</head>
+<body>
+
+    <!--
+        8 (desafio). Crie um minissistema de avaliação de atendimento em HTML/JS o qual:
+         a) Mostre a frase, em letras grande, "Como está meu atendimento?"
+         b) Tenha uma 'combo' com os itens
+          1 estrela
+          2 estrelas
+          3 estrelas
+          4 estrelas
+          5 estrelas
+         c) Abaixo da 'combo', o seguinte texto:
+          Média atual: 0 estrelas
+          Número de avaliações: 0
+         d) Ao clicar num botão "Confirmar avaliação", o programa pega o valor da avaliação e atualiza os valores de média e 
+         número de avaliações do item c). A regra é que o 1º item da combo vale 1, o 2º vale 2 e assim por diante.  
+    -->
+
+    <h1>
+        Como está meu atendimento?
+    </h1>
+
+    <select id="sel_avaliar">
+        <option value="">Selecione um opção</option>
+        <option value="1">1 estrela</option>
+        <option value="2">2 estrelas</option>
+        <option value="3">3 estrelas</option>
+        <option value="4">4 estrelas</option>
+        <option value="5">5 estrelas</option>
+    </select>
+
+    <button onclick="but_avaliar()">
+        Confirmar avaliação
+    </button>
+
+    <div>
+     <p>
+        Média atual: <b id="b_media">0</b> estrelas<br>
+        Número de avaliações: <b id="b_number">0</b>
+     </p>
+    </div>
+    
+</body>
+</html>
+
+<script>
+
+    var ax_soma = 0;
+    var ax_lista = Number(sel_avaliar.value);
+
+    function but_avaliar(){
+     ax_soma ++;
+     ax_lista += Number(sel_avaliar.value);
+     b_media.innerHTML = `${ax_lista / ax_soma }`;
+     b_number.innerHTML = `${ax_soma}`;
+    }
+
+</script>

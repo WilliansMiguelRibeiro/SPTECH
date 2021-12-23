@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Exercício 2 </title>
+</head>
+<body>
+    <!--
+        2. Crie um programa em HTML/JS o qual:
+        a) Ao clicar no botão "Sortear time", faz aparecer somente um dos escudos dos 4 times de futebol de maior torcida do estado de São Paulo. 
+        Independente da imagem, todas devem ter 150px de altura.
+    -->
+
+    <button onclick="but_time()">
+        Sortear time
+    </button><br><br>
+
+    <img id="img_time" src="" style="height: 150px;"><br><br>
+</body>
+</html>
+
+<script>
+    function but_time(){
+        var random = Math.random();
+
+        div_escolha.innerHTML += `${random}<br><br>`;
+
+        if(random >= 0.8){
+            img_time.src = `Imagens/Corinthians.png`;
+        }
+        else if(random >=0.6 ){
+            img_time.src = `Imagens/Santos.png`;
+        }
+        else if(random >= 5){
+            img_time.src = `Imagens/São_Paulo.png`;
+        }
+        else{
+            img_time.src = `Imagens/Flamengo.png`;
+        }
+    }
+</script>

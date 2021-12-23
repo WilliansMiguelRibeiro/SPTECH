@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 7</title>
+</head>
+<body>
+
+    <!--
+        7. Refazer os exercícios 10,11,12 e 13 da lista e(if) usando a estrutura “if else”.
+    -->
+
+    <!--
+     10. Criar um programa em HTML/JS que auxilie o Banco Itado a identificar quem entrou no cheque especial.
+        a) Solicite o saldo da conta
+        b) Solicite o valor do débito (ou seja, valor a tirar da conta)
+        c) Ao clicar em "Analisar conta", calcule o novo saldo da conta e exiba a mensagem "o saldo atual da conta corrente é xx.xx". 
+        Esta frase deverá estar em negrito e em vermelho somente se o saldo for menor que zero.
+    -->
+     
+    <h1>
+        Exercício 10
+    </h1>
+    <p>
+        Insira o saldo em sua conta:
+    </p>
+    
+    <input id="ipt_saldo">
+    
+    <p>
+        Insira o seu débito:
+    </p>
+    
+    <input id="ipt_debito">
+    
+    <button onclick="but_analisar()">
+        Analisar conta
+    </button>
+    
+    <div id="div_show"></div><br>
+
+    <br><div style="height: 5px; background-color: black;"></div>
+
+    <!--
+        11. Crie um programa em HTML/JS que controle o peso médio dentro de um elevador:
+        a) Solicite a quantidade de homens que entraram no elevador
+        b) Solicite a quantidade de mulher que entraram no elevador
+        c) Ao clicar em "Analisar peso", calcule o peso estimado sendo: homens x 80 somado com mulheres x 60
+        d) Exiba na página a mensagem "Este elevador suporta 800 Kg e o peso estimado desta lotação é de xxxkg";
+        e) Se o peso estimado for maior que 800, exibir também a mensagem "Será necessário descer alguém para que o elevador se movimente",
+        na cor azul.
+    -->
+
+    <h2>
+        Exercício 11
+    </h2>
+
+    <b>
+        Insira a quantidade de homens que entraram no elevador:
+    </b><br><br>
+
+    <input id="homem" placeholder="Quantidade de homens"><br><br>
+
+    <b>
+        Insira a quantidade de mulheres que entraram no elevador:
+    </b><br><br>
+
+    <input id="mulheres" placeholder="Quantidade de mulheres"><br><br><br>
+
+    <button onclick="peso()">
+        Calcular peso 
+    </button><br><br>
+
+    <div id="resultado"></div><br>
+
+    <br><div style="height: 5px; background-color: black;"></div>
+
+    <!--
+    12. Estima-se que os usuários de conteúdo de Streaming gastem cerca de 100 milhões de horas por dia nesse tipo de entretenimento.
+    Em média um episódio de seriado americano do estilo SITCOM (Friends, How I Met Your Mother, Dois Homens e Meio, etc) tem 22min de duração.
+    Sabendo disso, crie um programa em HTML/JS o qual:
+     a) Peça ao usuário para informar a última série (SITCOM) que ele assistiu.
+     b) Peça ao usuário para informar o total de episódios que ele já assistiu da série.
+     c) Tenha um botão "Verificar nível" que exiba abaixo dele a seguinte frase:
+     "Vejo que você gosta da série X"
+     E se o usuário já gastou mais de 30 horas na série informada, exiba também: "Uau, você realmente gosta dessa série!".
+     Obs* Considere 22min como o tempo de duração de 1 episódio.
+    -->
+
+    <h2>
+        Exercício 12
+    </h2>
+
+    <p>
+        Nome da última série assistida:
+    </p>
+    
+    <input id="ipt_seriado">
+    
+    <p>
+        Total de episódios:
+    </p>
+    
+    <input id="ipt_quantidade">
+    
+    <button onclick="but_verificar()">
+        Verificar nível
+    </button>
+    
+    <div id="div_mostrar"></div><br>
+
+    <br><div style="height: 5px; background-color: black;"></div>
+
+ <!--
+     13. Crie um programa em HTML/JS o qual:
+      a) Solicite o peso total num elevador
+      b) Ao clicar num botão "Ligar elevador"...
+      c) Caso o peso seja menor que 500, exiba um alert com a frase "Elevador vai se mover"
+      d) Caso o peso seja a partir de 500, exiba um alert com "Alguém precisa descer do elevador"
+ -->
+
+  <h2>
+    Exercício 13
+  </h2>
+
+ <p>
+    Insira o peso total do elevador:
+ </p>
+
+ <input id="ipt_elevador">
+
+ <button onclick="but_peso()">
+    Ligar elevador
+ </button>
+
+
+</body>
+</html>
+
+<script>
+    
+    function but_analisar(){
+        var ax_subtrair = Number(ipt_saldo.value) - Number(ipt_debito.value);
+        div_show.innerHTML = ``;
+
+        if(ax_subtrair >= 0){
+            div_show.innerHTML = `O saldo atual da conta corrente é R$ ${ax_subtrair.toFixed(2)}`;
+        }
+        else{
+            div_show.innerHTML = `<b style="color: red;">O saldo atual da conta corrente é R$ ${ax_subtrair.toFixed(2)}</b>`;
+        }
+    }
+
+    function peso(){
+     var um = homem.value * 80;
+     var dois = mulheres.value * 60;
+     var soma = Number(um) + Number(dois);
+     resultado.innerHTML = ``;
+    
+     
+     if(soma <= 800){
+        resultado.innerHTML = `Este elevador suporta 800 Kg e o peso estimado desta lotação é de: ${soma}kg <br>`;
+     }
+     else{
+       resultado.innerHTML += `Este elevador suporta 800 Kg e o peso estimado desta lotação é de: ${soma}kg <br>
+       <span style="color: blue;"> Será necessário descer alguém para que o elevador se movimente </span>`;
+     }
+    }
+    
+    function but_verificar(){
+        var ax_quantidade = Number(ipt_quantidade.value) * 22; 
+        div_mostrar.innerHTML = ``;
+
+        if(ax_quantidade <= 180){
+            div_mostrar.innerHTML = `Vejo que você gosta da série ${ipt_seriado.value}`;
+        }
+        else{
+            div_mostrar.innerHTML = `Vejo que você gosta da série ${ipt_seriado.value}<br>
+            Uau, você realmente gosta dessa série!`;
+        }
+    }
+
+    function but_peso(){
+        var ax_peso = Number(ipt_elevador.value);
+
+        if(ax_peso < 500){
+            alert('Elevador vai se mover');
+        }
+        else{
+            alert('Alguém precisa descer do elevador');
+        }
+    }
+
+</script>

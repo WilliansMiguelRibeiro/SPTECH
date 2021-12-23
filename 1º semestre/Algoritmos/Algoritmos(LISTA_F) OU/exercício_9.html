@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 9</title>
+</head>
+<body>
+
+    <!--
+        9. Crie um programa em HTML/JS o qual:
+         a) Tenha uma combo com os seguintes tipos de alimentos:
+          Carne bovina
+          Soja
+          Carne suína
+          Legumes
+          Carne de peixe
+          Frutas
+          Ovos
+          b) Ao clicar em "Tipo de alimentação", exiba uma ou mais frases abaixo do botão, que podem ser:
+          b.1) "Você não pode ser Vegano", caso o item escolhido seja alguma das carnes ou os "Ovos"
+          b.2) "Você pode ser Vegano", caso o item escolhido seja "Soja" ou "Legumes" ou "Frutas"
+          b.3) "Você pode ser Vegetariano", caso o item escolhido seja "Soja" ou "Legumes" ou "Frutas" ou "Ovos"
+    -->
+    
+    <select id="sel_food">
+        <option value="1">Carne bovina</option>
+        <option value="2">Soja</option>
+        <option value="3">Carne suína</option>
+        <option value="4">Legumes</option>
+        <option value="5">Carne de peixe</option>
+        <option value="6">Frutas</option>
+        <option value="7">Ovos</option>
+    </select>
+
+    <button onclick="but_feed()">
+        Tipo de alimentação
+    </button>
+
+    <div id="div_show"></div>
+
+</body>
+</html>
+
+<script>
+    function but_feed(){
+        var ax_food = sel_food.value;
+
+        if(ax_food == 1 || ax_food == 3 || ax_food == 7){
+            div_show.innerHTML += `Você não pode ser Vegano<br>`;
+        }
+        else if(ax_food == 2 || ax_food == 4 || ax_food == 6){
+            div_show.innerHTML += `Você pode ser Vegano<br>`;
+            if(ax_food == 2 || ax_food == 4 || ax_food == 6 || ax_food == 7){
+                div_show.innerHTML += `Você pode ser Vegetariano<br>`;
+            }
+        }
+    }
+</script>

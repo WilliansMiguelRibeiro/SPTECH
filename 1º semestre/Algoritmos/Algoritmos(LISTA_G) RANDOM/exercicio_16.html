@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 16</title>
+</head>
+<body>
+
+    <!--
+        16. Crie um programa em HTML/JS o qual:
+         a) Solicite ao usuário que digite seu nome e seu número inteiro da sorte. Esse número deve ser entre 1 e 10
+         b) Ao clicar num botão "Sortear" valide se o usuário digitou entre 1 e 10. Caso não, exiba uma alert orientando sobre o erro. 
+         Caso contrário, faça um sorteio de números inteiros entre 1 e 10.
+         c) Caso o número sorteado em b) for o número da sorte informado em a), exiba um texto em qualquer lugar da página dizendo 
+         "Parabéns, YYYYYYY você foi sorteado(a) após X sorteios!", onde X é a quantidade de sorteios realizados e YYYYYYY é o nome do usuário 
+    -->
+
+    <p>
+        Nome:
+    </p>
+
+    <input id="ipt_name">
+
+    <p>
+        Número da sorte(Entre 1 e 10):
+    </p>
+
+    <input id="ipt_luck">
+
+    <button onclick="but_number()">
+        Sortear
+    </button><br><br>
+
+    <div id="div_show"></div>
+    
+</body>
+</html>
+
+<script>
+    var ax_soma = 0; 
+
+    function but_number(){
+        var ax_name = ipt_name.value;
+        var ax_luck = Number(ipt_luck.value);
+        var ax_random = (Math.random() * 9 + 1).toFixed();
+        
+        if(ax_luck < 1 || ax_luck > 10){
+            alert('O número inserito está incorreto! Tente novamente');
+        }
+        else{
+            ax_soma ++;
+            div_show.innerHTML = `Nummero sorteado: ${ax_random}<br>`;
+            if(ax_random == ax_luck){
+                div_show.innerHTML += `Parabéns, ${ax_name} você foi sorteado(a) após ${ax_soma} sorteios!`
+            }
+        }
+    }
+</script>

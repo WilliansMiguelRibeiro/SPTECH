@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício Bônus</title>
+</head>
+<body>
+
+    <!--
+        Bônus. Melhore o programa 16 permitindo que o usuário escolha até 3 números da sorte. Sendo que as mensagens ficarão: 
+        “Parabéns, YYYYYY o seu número da sorte 99 foi sorteado após X sorteios!”.
+    -->
+
+    <p>
+        Nome:
+    </p>
+
+    <input id="ipt_name">
+
+    <p>
+        Número da sorte(Entre 1 e 10):
+    </p>
+
+    <input id="ipt_luck1">
+
+    <p>
+        Número da sorte(Entre 1 e 10):
+    </p>
+
+    <input id="ipt_luck2">
+
+    <p>
+        Número da sorte(Entre 1 e 10):
+    </p>
+
+    <input id="ipt_luck3">
+
+    <button onclick="but_number()">
+        Sortear
+    </button><br><br>
+
+    <div id="div_show"></div>
+    
+</body>
+</html>
+
+<script>
+    var ax_soma = 0; 
+
+    function but_number(){
+        var ax_name = ipt_name.value;
+        var ax_luck1 = Number(ipt_luck1.value);
+        var ax_luck2 = Number(ipt_luck2.value);
+        var ax_luck3 = Number(ipt_luck3.value);
+        var ax_random = (Math.random() * 9 + 1).toFixed();
+        
+        if(ax_luck1 < 1 || ax_luck1 > 10){
+            alert('O número inserito está incorreto! Tente novamente');
+        }
+        else if(ax_luck2 < 1 || ax_luck2 > 10){
+            alert('O número inserito está incorreto! Tente novamente');
+        }
+        else if(ax_luck3 < 1 || ax_luck3 > 10){
+            alert('O número inserito está incorreto! Tente novamente');
+        }
+        else{
+            ax_soma ++;
+            div_show.innerHTML = `Nummero sorteado: ${ax_random}<br>`;
+            
+            if(ax_random == ax_luck1){
+                div_show.innerHTML += `Parabéns, ${ax_name} o seu número da sorte ${ax_luck1} foi sorteado após ${ax_soma} sorteios!`
+            }
+            else if(ax_random == ax_luck2){
+                div_show.innerHTML += `Parabéns, ${ax_name} o seu número da sorte ${ax_luck2} foi sorteado após ${ax_soma} sorteios!`
+            }
+            else if(ax_random == ax_luck3){
+                div_show.innerHTML += `Parabéns, ${ax_name} o seu número da sorte ${ax_luck3} foi sorteado após ${ax_soma} sorteios!`
+            }
+        }
+    }
+</script>

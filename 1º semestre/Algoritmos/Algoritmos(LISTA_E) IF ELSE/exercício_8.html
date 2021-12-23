@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 8</title>
+</head>
+<body>
+
+    <!--
+        8. Crie um programa em HTML/JS o qual:
+         a) Solicite a quantidade de homens e mulheres num elevador
+         b) Ao clicar num botão "Ligar elevador", calcule o peso total no elevador, considerando que um homem pesa em média 90kg e uma mulher 70kg
+         c) Caso o peso seja menor que 500, exiba uma frase na cor verde abaixo do botão com a frase Elevador vai se mover, pois está com Xkg
+         d) Caso o peso seja a partir de 500, exiba uma frase na cor vermelha abaixo do botão com a frase Alguém precisa descer. Precisa perder 
+         Xkg para mover o elevador
+    -->
+
+    <p>
+        Quantidade de mulheres no elevador:
+    </p>
+
+    <input id="ipt_quantidade1">
+
+    <p>
+        Quantidade de homens no elevador:
+    </p>
+
+    <input id="ipt_quantidade2">
+
+    <button onclick="but_pessoas()">
+        Ligar elevador
+    </button>
+
+    <div id="div_peso"></div>
+
+    <span style="color: green;"></span>
+    
+</body>
+</html>
+
+<script>
+
+    function but_pessoas(){
+       var ax_quantidade1 = Number(ipt_quantidade1.value * 70);
+       var ax_quantidade2 = Number(ipt_quantidade2.value * 90);
+       var ax_peso = ax_quantidade1 + ax_quantidade2;
+       div_peso.innerHTML = ``;
+
+       if(ax_peso >= 500){
+         div_peso.innerHTML = `<span style="color: red;">Alguém precisa descer. Precisa perder 
+         ${ax_peso - 500}kg para mover o elevador</span>`;
+       }
+       else{
+         div_peso.innerHTML = `<span style="color: green;">Elevador vai se mover, pois está com ${ax_peso}kg</span>`;
+       }
+
+    }
+</script>

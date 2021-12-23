@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício_4</title>
+</head>
+<body>
+    
+    <!--
+        4. Um novo banco eletrônico, o Banco Melete possiu um sistema diferenciado de autenticação no qual pede um login, 
+        usa senha e uma 3ª informação pessoal, que pode ser o ano de nascimento ou o nome do animal de estimação do cliente. 
+        Crie um protótipo em HTML/Js que simule a autenticação de um determinado cliente:
+        a) Solicite o login, a senha e a informação pessoal ao usuário
+        b) Ao clicar num botão "Autenticar", exiba uma dessas frases abaixo do botão:
+         b.1.) "Usuário autenticado", caso o login seja "ana", a senha "braga" e a informação pessoal for ou "1960" ou "louro josé"
+         b.2.) "Falha na autenticação", caso as regras de verificação em b.1) falhem
+    -->
+
+    <h1>Banco Melete</h1>
+
+    <p>Login:</p>
+    <input id="ipt_login" placeholder="Login">
+
+    <p>Senha:</p>
+    <input id="ipt_senha" type="password" placeholder="Senha">
+
+    <p>Informação pessoal:</p>
+    <input id="ipt_pessoal" placeholder="Informação pessoal"><br><br>
+
+    <button onclick="but_autenticar()">Autenticar</button><br><br>
+
+    <div id="div_cliente"></div>
+
+</body>
+</html>
+
+<script>
+    function but_autenticar(){
+        var login = ipt_login.value;
+        var senha = ipt_senha.value;
+        var pessoal = ipt_pessoal.value;
+
+        if(login == 'ana' && senha == 'braga' && (pessoal == '1960' || pessoal == 'louro josé')){
+            div_cliente.innerHTML = `Usuário autenticado`;
+        }
+        else{
+            div_cliente.innerHTML = `Falha na autenticação`;
+        }
+    }
+</script>

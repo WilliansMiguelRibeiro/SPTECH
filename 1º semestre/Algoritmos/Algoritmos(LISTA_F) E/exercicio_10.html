@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Exercício 10 </title>
+</head>
+<body>
+
+    <!--
+        10. Crie um programa o qual:
+        a) Pergunte o intervalo da altura desejada para os próximos pilotos (altura inicial e altura final de seleção) 
+        A altura inicial tem que ser maior que 1 e a altura final tem que ser maior que a altura inicial, caso contrário 
+        emitir mensagem de alerta E NÃO SEGUIR EM FRENTE.
+        b) Pergunte o nome e a atura do candidato a piloto.
+        c) Emitir uma das duas mensagens abaixo sem apagar as mensagens anteriores:
+        1) “O candidato XXXXX com altura de 9,99 participará do processo de seleção de piloto”, caso a altura do 
+        candidato esteja no intervalo informado.
+        2) “Infelizmente o candidato XXXXX com altura de 9,99 não atende os requisitos”, 
+        caso a altura do candidato NÃO esteja no intervalo informado.
+    -->
+
+    <p>
+        Altura inicial:
+    </p>
+    
+    <input id="ipt_height1">
+
+    <p>
+        Altura final:
+    </p>
+
+    <input id="ipt_height2">
+
+    <button onclick="but_calcular()">
+        Calcular
+    </button>
+
+    <div id="div_show" style="display: none;">
+     
+     <p>
+        Nome do candidato à piloto:
+     </p>
+
+     <input id="ipt_name">
+
+     <p>
+        Altura do candidato:
+     </p>
+
+     <input id="ipt_stature">
+    
+     <button onclick="but_validate()">
+        Validar
+     </button>
+
+     <div id="div_mostrar"></div>
+    
+    </div>
+</body>
+</html>
+
+<script>
+    var ax_height1 = 0;
+    var ax_height2 = 0;     
+
+    function but_calcular(){
+        ax_height1 = Number(ipt_height1.value);
+        ax_height2 = Number(ipt_height2.value);
+
+        if(ax_height1 > 1 && ax_height2 > ax_height1){
+            div_show.style.display = "block";
+        }
+        else{
+            alert('Altura não permitida!');
+        }
+    }
+
+    function but_validate(){
+        ax_height1 = Number(ipt_height1.value);
+        ax_height2 = Number(ipt_height2.value);
+        var ax_name = ipt_name.value;
+        var ax_stature = Number(ipt_stature.value);
+
+        if(ax_stature >= ax_height1 && ax_stature <= ax_height2){
+          div_mostrar.innerHTML += `O candidato ${ax_name} com altura de ${ax_stature} participará do processo de seleção de piloto<br>`;
+        }
+        else{
+            div_mostrar.innerHTML += `Infelizmente o candidato ${ax_name} com altura de ${ax_stature} não atende os requisitos<br>`;
+        }
+    }
+</script>

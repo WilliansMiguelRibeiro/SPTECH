@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício_2</title>
+</head>
+<body>
+    
+    <!--
+        2. Robervaldo não sai do Tinder e tem preferência por mulheres altas (a partir de 1,7m) e de cabelo pretos ou vermelhos. 
+        Crie um simulador de Tinder para ele no qual:
+        a) Numa combo, pergunte a cor de cabelo da moça, tendo disponíveis as opções
+         Preto
+         Vermelho
+         Amarelo
+         Castanho
+        b) Pergunte a altura da moça
+        c) Ao clicar em "Deu match?", mostre, abaixo:
+        A imagem de um cara feliz/empolgado, caso as características sejam Robervaldo goste, ou a imagem de um 
+        cara decepcionado em caso contrário
+    -->
+
+    <h1>Simulador de Tinder</h1>
+
+    <select id="lista_cores">  
+        <option value="1">Preto</option>  
+        <option value="2">Vermelho</option> 
+        <option value="3">Amarelo</option> 
+        <option value="4">Castanho</option>   
+    </select><br><br>
+    
+    <p>Insira a sua altura:</p>
+    <input id="ipt_altura" placeholder="Altura"><br><br>
+
+    <button onclick="but_romance()">Deu match?</button><br><br>
+
+    <img id="img_emocao" src="" height="150px">
+    
+</body>
+</html>
+
+<script>
+    function but_romance(){
+        var altura = ipt_altura.value;
+        var cores = lista_cores.value;
+        
+        if(altura >= 1.7 && (cores == '1' || cores == '2')){
+          img_emocao.src = 'imagens/felicidade.jpg';
+        }
+        else{
+            img_emocao.src = 'imagens/decepcionado.jpeg';
+        }
+    }
+</script>

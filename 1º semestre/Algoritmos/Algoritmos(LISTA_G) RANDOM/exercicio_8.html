@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 8</title>
+</head>
+<body>
+    <!--
+        8. Crie um programa em HTML/JS o qual:
+         a) Tenha um botão "Gerar uma nota de aluno entre 0 e 10" que faz aparecer, abaixo dele, a nota gerada
+         b) Tenha um botão "Gerar uma frequência de aluno entre 0 e 100" que faz aparecer, abaixo dele, a frequência gerada
+         c) Deixe todos os valores com 2 casas decimais na tela
+         d) Ao clicar no botão “Aprovado?”, emitir um alerta com a situação desse aluno.
+    -->
+
+    <button onclick="but_note()">
+        Gerar uma nota de aluno entre 0 e 10
+    </button><br><br>
+
+    <div id="div_show1"></div><br>
+
+    <button onclick="but_frequency()">
+        Gerar uma frequência de aluno entre 0 e 100
+    </button><br><br>
+
+    <div id="div_show2"></div><br>
+
+    <button onclick="but_approved()">
+        Aprovado?
+    </button>
+</body>
+</html>
+
+<script>
+    var ax_random1 = 0;
+    var ax_random2 = 0;
+
+    function but_note(){
+        ax_random1 = (Math.random() * 10).toFixed(2);
+        div_show1.innerHTML = `${ax_random1}`;
+    }
+
+    function but_frequency(){
+        ax_random2 = (Math.random() * 100).toFixed(2);
+        div_show2.innerHTML = `${ax_random2}`;
+    }
+
+    function but_approved(){
+        alert(`Este aluno tem uma nota de ${ax_random1} e sua frequência foi de ${ax_random2}`);
+    }
+</script>

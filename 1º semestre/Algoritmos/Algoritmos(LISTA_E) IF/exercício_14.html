@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 14</title>
+</head>
+<body>
+    
+<!--
+    14. Crie um programa em HTML/JS o qual:
+     a) Solicite 2 notas de um aluno
+     b) Ao clicar em "Verificar situação", calcule sua média e...
+     c) Caso a média seja a partir de 6, exiba um alert com "Parabéns, aprovado!"
+     d) Caso a média seja menor que 6, exiba um alert com "Tente outra vez..."
+-->
+
+<p>
+    Insira a nota de História:
+</p>
+
+<input id="ipt_history">
+
+<p>
+    Insira a nota de Matemática:
+</p>
+
+<input id="ipt_math">
+
+<button onclick="but_media()">
+    Verificar situação
+</button>
+
+</body>
+</html>
+
+<script>
+    function but_media(){
+        var ax_avg = (Number(ipt_history.value) + Number(ipt_math.value)) / 2;
+
+        if(ax_avg >= 6){
+            alert('Parabéns, aprovado!');
+        }
+        if(ax_avg < 6){
+            alert('Tente outra vez...');
+        }
+    }
+</script>

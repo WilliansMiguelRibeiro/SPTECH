@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 18</title>
+</head>
+<body>
+
+    <!--
+        18 (desafio). Crie um programa em HTML/JS o qual:
+        a) Tenha o seguinte texto no topo:
+        Vida do Lutador: 1000
+        b) Abaixo do texto tenha uma foto de um Lutador em ótima condição
+        c) Tenha os botões "Apanhar" e "Concentrar força"
+        d) Ao clicar no "Apanhar", a vida do Lutador reduz em 100
+        e) Ao clicar no "Concentrar força", a vida do Lutador aumenta em 5%
+        f) Caso a vida do lutador chegue em 0 ou menos, exibir, abaixo do texto de a) a frase Lutador já era! e a foto do Lutador 
+        deve mudar para o mesmo personagem, mas todo machucado. Enquanto não chegar em 0, sempre que apanhar ou concentrar força, exiba, 
+        no mesmo lugar, a frase Lutador ainda vivo!
+        f) Caso a vida seja 0 ou menos, nenhum dos botões deve mais funcionar
+    -->
+    
+    <h1>
+        Vida do Lutador: <span id="span_life">1000</span>
+    </h1>
+
+    <p>
+        <b>
+            <u>
+               <i id="inner_lose">
+                 Lutador ainda vivo!
+               </i> 
+            </u>
+        </b>
+    </p>
+
+    <img id="img_lutador" src="img/muhammad.jpg" style="height: 200px;"><br><br>
+
+    <button id="but_apanhar" onclick="but_take()">
+        Apanhar
+    </button>
+
+    <button id="but_torcer" onclick="but_strength()">
+        Concentrar força
+    </button>
+
+</body>
+</html>
+
+<script>
+    var ax_take = Number(1000);
+
+    function but_take(){
+        ax_take -= 100;
+        span_life.innerHTML = `${ax_take.toFixed()}`;
+        if(ax_take <= 0){
+          img_lutador.src = `img/muhammad perdendo.jpg`
+          inner_lose.innerHTML = `Lutador já era!`;
+          but_apanhar.style.display = "none";
+          but_torcer.style.display = "none";
+          span_life.innerHTML = `0`;
+        }
+    }
+
+    function but_strength(){
+        ax_take = ax_take + (ax_take*(5/100));
+        span_life.innerHTML = `${ax_take.toFixed()}`;
+    }
+</script>

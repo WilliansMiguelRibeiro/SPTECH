@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 10</title>
+</head>
+<body>
+
+    <!--
+        10. Crie um programa em HTML/JS o qual:
+         a) Tenha um botão "Jogador 1 jogar dadinho" que faz aparecer, abaixo dele, o valor de um dadinho de 6 lados sorteado
+         b) Tenha um botão "Jogador 2 jogar dadinho" que faz aparecer, abaixo dele, o valor de um dadinho de 6 lados sorteado
+         c) Ainda após o clique do segundo botão, exiba abaixo de tudo uma dessas frases:
+          "Jogador [1 ou 2] venceu" caso um deles tenha vencido
+          "Empate", caso de empate
+    -->
+
+    <button onclick="but_player1()">
+        Jogador 1 jogar dadinho
+    </button><br><br>
+
+    <img src="" id="img_dados1" style="height: 200px;"><br>
+    
+    <button onclick="but_player2()">
+        Jogador 2 jogar dadinho
+    </button><br><br>
+
+    <img src="" id="img_dados2" style="height: 200px;"><br>
+
+    <div id="div_show"></div>
+</body>
+</html>
+
+<script>
+    var ax_random1 = 0;
+    var ax_random2 = 0;
+
+    function but_player1(){
+        ax_random1 = (Math.random() * 5 + 1).toFixed();
+
+        if(ax_random1 == 1){
+            img_dados1.src = "Imagens/dados-side_one.png";
+        }
+        else if(ax_random1 == 2){
+            img_dados1.src = "Imagens/dados-side_two.png";
+        }
+        else if(ax_random1 == 3){
+            img_dados1.src = "Imagens/dados-side_three.png";
+        }
+        else if(ax_random1 == 4){
+            img_dados1.src = "Imagens/dados-side_four.png";
+        }
+        else if(ax_random1 == 5){
+            img_dados1.src = "Imagens/dados-side_five.png";
+        }
+        else if(ax_random1 == 6){
+            img_dados1.src = "Imagens/dados-side_six.png";
+        }
+
+        div_show.innerHTML = ``;
+    }
+
+    function but_player2(){
+        ax_random2 = (Math.random() * 5 + 1).toFixed();
+
+        if(ax_random2 == 1){
+            img_dados2.src = "Imagens/dados-side_one.png";
+        }
+        else if(ax_random2 == 2){
+            img_dados2.src = "Imagens/dados-side_two.png";
+        }
+        else if(ax_random2 == 3){
+            img_dados2.src = "Imagens/dados-side_three.png";
+        }
+        else if(ax_random2 == 4){
+            img_dados2.src = "Imagens/dados-side_four.png";
+        }
+        else if(ax_random2 == 5){
+            img_dados2.src = "Imagens/dados-side_five.png";
+        }
+        else if(ax_random2 == 6){
+            img_dados2.src = "Imagens/dados-side_six.png";
+        }
+
+        if(ax_random1 > ax_random2){
+            div_show.innerHTML = `Jogador 1 venceu`;
+        }
+        else if(ax_random2 > ax_random1){
+            div_show.innerHTML = `Jogador 2 venceu`;
+        }
+        else{
+            div_show.innerHTML = `Empate`;
+        }
+    }
+</script>

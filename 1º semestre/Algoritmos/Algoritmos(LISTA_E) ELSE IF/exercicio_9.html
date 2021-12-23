@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Exercício 9 </title>
+</head>
+<body>
+
+   <!--
+     9. Crie um programa em HTML/JS o qual:
+     a) Pergunte ao usuário qual sua meta de economia
+     b) Pergunte ao usuário quanto tem guardado
+     c) Ao clicar em "Analisar economia"...
+     d) Caso a meta tenha sido alcançada ou ultrapassada, exibir, abaixo do botão, a frase Parabéns, meta alcançada!. Caso a meta 
+      tenha sido ultrapassada, exibir também a frase Meta ultrapassada em X (onde X é a diferença entre a economia e a meta)
+     e) Caso a meta ainda não tenha sido alcançada, exibir, abaixo do botão, a frase Força! Ainda em busca da meta! Falta X 
+      (onde X é a diferença entre a meta e a economia)
+    -->
+    
+    <p>
+        Meta de economia:
+    </p>
+
+    <input id="ipt_economia">
+
+    <p>
+        Quanto tem guardado:
+    </p>
+
+    <input id="ipt_money">
+
+    <button onclick="but_economia()">
+        Analisar economia
+    </button>
+    
+    <div id="div_meta"></div>
+</body>
+</html>
+
+<script>
+function but_economia(){
+    var ax_economy = Number(ipt_economia.value);
+    var ax_money = Number(ipt_money.value);
+    var ax_less = ax_money - ax_economy;
+    var ax_less1 = ax_economy - ax_money;
+    div_meta.innerHTML = ``;
+    
+    if(ax_money > ax_economy){
+        div_meta.innerHTML = `Parabéns, meta alcançada!<br>
+        Meta ultrapassada em R$ ${ax_less}`;
+    }
+    else if(ax_money >= ax_economy){
+        div_meta.innerHTML = `Parabéns, meta alcançada!`;
+    }
+    else{
+        div_meta.innerHTML = `Força! Ainda em busca da meta! Falta R$ ${ax_less1} `;
+    }
+}
+</script>

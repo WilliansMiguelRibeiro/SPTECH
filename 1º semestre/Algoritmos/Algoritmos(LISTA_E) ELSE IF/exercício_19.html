@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 19</title>
+</head>
+<body>
+
+<img id="img_goku" src="img/goku.png" style="height: 300px;width: 300px;">
+
+<div id="div_life1" style="height: 10px; width: 300px; background-color: red;"></div>
+
+<button id="but_luta1" onclick="but_take1()">
+    Apanhar
+</button>
+
+<div id="div_win1"></div><br>
+
+<img id="img_vegeta" src="img/vegeta.jpg" style="height: 300px;width: 300px;">
+
+<div  id="div_life2" style="height: 10px; width: 300px; background-color: red;"></div>
+
+<button id="but_luta2" onclick="but_take2()">
+    Apanhar
+</button>
+
+<div id="div_win2"></div>
+ 
+</body>
+</html>
+
+<script>
+    var ax_life1 = 300;
+    var ax_life2 = 300;
+
+    function but_take1(){
+     ax_life1 -= 25;
+     div_life1.style.width = `${ax_life1}px`;
+
+     if(ax_life1 == 0){
+      img_goku.src = `img/caixão.jpg`;
+      div_win2.innerHTML = `<b>Vegeta venceu!</b>`;
+      but_luta1.style.display = "none";
+      but_luta2.style.display = "none";
+     }
+    }
+
+    function but_take2(){
+     ax_life2 -= 25;
+     div_life2.style.width = `${ax_life2}px`;
+
+     if(ax_life2 == 0){
+        img_vegeta.src = `img/caixão.jpg`;
+        div_win1.innerHTML = `<b>Goku venceu!</b>`;
+        but_luta1.style.display = "none";
+        but_luta2.style.display = "none";
+     }
+    }
+</script>

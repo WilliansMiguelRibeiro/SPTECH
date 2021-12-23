@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 10</title>
+</head>
+<body>
+
+  <!--
+      10. Robervaldo adora pizza. Todo mundo adora, né? Que tal criarmos um programa que nos ajude a calcular o preço final de uma pizza 
+      de 3 ingredientes.
+      O programa deve conter:
+       - um campo para o sabor da pizza (este campo já deve receber o foco do teclado assim que a página for carregada)
+       - 3 (três) combo box, um abaixo do outro, ambos com os mesmos itens:
+        Queijo, Presunto, Ovo, Palmito, Frango, Catupiry
+       - Após escolher o ingrediente, abaixo de cada combo deve aparecer uma imagem ilustrativa dele. Isso para todos os 3 combos. Ou seja, 
+       se o usuário escolher "Queijo" na primeira, abaixo dela deve aparecer uma imagem de um queijo. Se escolher "Palmito" na segunda, abaixo 
+       dela aparecer uma imagem de palmito.
+       - Um botão "Calcular preço da pizza"
+        Ao clicar no botão, é exibido um texto abaixo dele com a exata formatação abaixo (negrito, sublinhado etc):
+        A pizza de SABOR vai custar um total de R$X
+        X é a soma dos preços dos 3 ingredientes escolhidos. Defina você mesmo valores para cada um dos ingredientes, porém lembre-se de que o 
+        usuário não os vê.
+  -->
+
+  <p>
+      Insira os sabor da pizza:
+  </p>
+
+  <input id="ipt_sabor" placeholder="Sabor da pizza"><br><br>
+
+  <select id="sel_ingredientes1" onchange="on_mudar1()">
+      <option value="0.00">Selecione o ingrediente</option>
+      <option value="9.50">Queijo</option>
+      <option value="9.00">Presunto</option>
+      <option value="6.00">Ovo</option>
+      <option value="8.00">Palmito</option>
+      <option value="7.50">Frango</option>
+      <option value="8.90">Catupiry</option>
+  </select><br><br>
+
+  <img src="" id="img_sabor1" style="height: 150px;"><br><br>
+
+  <select id="sel_ingredientes2" onchange="on_mudar2()">
+    <option value="0.00">Selecione o ingrediente</option>
+    <option value="9.50">Queijo</option>
+    <option value="9.00">Presunto</option>
+    <option value="6.00">Ovo</option>
+    <option value="8.00">Palmito</option>
+    <option value="7.50">Frango</option>
+    <option value="8.90">Catupiry</option>
+</select><br><br>
+
+<img src="" id="img_sabor2" style="height: 150px;"><br><br>
+
+<select id="sel_ingredientes3" onchange="on_mudar3()">
+    <option value="0.00">Selecione o ingrediente</option>
+    <option value="9.50">Queijo</option>
+    <option value="9.00">Presunto</option>
+    <option value="6.00">Ovo</option>
+    <option value="8.00">Palmito</option>
+    <option value="7.50">Frango</option>
+    <option value="8.90">Catupiry</option>
+</select><br><br>
+
+<img src="" id="img_sabor3" style="height: 150px;"><br><br>
+
+<button onclick="but_price()">
+    Calcular preço da pizza
+</button><br><br>
+
+<div id="div_valor"></div>
+
+</body>
+</html>
+
+<script>
+     var ax_food1 = 0;
+     var ax_food2 = 0;
+     var ax_food3 = 0;
+
+    function on_mudar1(){
+        ax_food1 = Number(sel_ingredientes1.value);
+
+        if(ax_food1 == 9.50){
+            img_sabor1.src = `img/queijo.jpg`;
+        }
+        if(ax_food1 == 9.00){
+            img_sabor1.src = `img/presunto.jpg`;
+        }
+        if(ax_food1 == 6.00){
+            img_sabor1.src = `img/ovo.jpg`;
+        }
+        if(ax_food1 == 8.00){
+            img_sabor1.src = `img/palmito.jpg`;
+        }
+        if(ax_food1 == 7.50){
+            img_sabor1.src = `img/frango.jpg`;
+        }
+        if(ax_food1 == 8.90){
+            img_sabor1.src = `img/catupiry.jpg`;
+        }
+    }
+
+    function on_mudar2(){
+        ax_food2 = Number(sel_ingredientes2.value);
+
+        if(ax_food2 == 9.50){
+            img_sabor2.src = `img/queijo.jpg`;
+        }
+        if(ax_food2 == 9.00){
+            img_sabor2.src = `img/presunto.jpg`;
+        }
+        if(ax_food2 == 6.00){
+            img_sabor2.src = `img/ovo.jpg`;
+        }
+        if(ax_food2 == 8.00){
+            img_sabor2.src = `img/palmito.jpg`;
+        }
+        if(ax_food2 == 7.50){
+            img_sabor2.src = `img/frango.jpg`;
+        }
+        if(ax_food2 == 8.90){
+            img_sabor2.src = `img/catupiry.jpg`;
+        }
+    }
+
+    function on_mudar3(){
+         ax_food3 = Number(sel_ingredientes3.value);
+
+        if(ax_food3 == 9.50){
+            img_sabor3.src = `img/queijo.jpg`;
+        }
+        if(ax_food3 == 9.00){
+            img_sabor3.src = `img/presunto.jpg`;
+        }
+        if(ax_food3 == 6.00){
+            img_sabor3.src = `img/ovo.jpg`;
+        }
+        if(ax_food3 == 8.00){
+            img_sabor3.src = `img/palmito.jpg`;
+        }
+        if(ax_food3 == 7.50){
+            img_sabor3.src = `img/frango.jpg`;
+        }
+        if(ax_food3 == 8.90){
+            img_sabor3.src = `img/catupiry.jpg`;
+        }
+    }
+
+    function but_price(){
+        ax_soma = ax_food1 + ax_food2 + ax_food3;
+        div_valor.innerHTML = `<b>A pizza de ${ipt_sabor.value} vai custar um total de <u>R$ ${ax_soma.toFixed(2)}</u></b>`;
+    }
+</script>
+

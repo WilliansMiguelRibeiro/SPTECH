@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 7</title>
+</head>
+<body>
+
+    <!--
+        7 (desafio). Melhore o exercício anterior de tal forma que:
+         a) Sempre que ocorrer uma falha na autenticação, deve aparecer abaixo da frase de 
+          "Falha de autenticação" uma outra frase, como esta:
+            Você ainda tem 2 tentativa(s)
+         b) A ideia é que o usuário tem 3 tentativas de autenticação. Sempre que errar novamente na autenticação, o "contador" 
+          de tentativas reduz em 1 na tela.
+         c) Uma vez que se esgotarem as tentativas, deve surgir mais uma frase abaixo, que seria
+           Usuário BLOQUEADO! Procure seu gerente!
+         d) Em caso de usuário bloqueado, não adianta nem tentar fazer uma autenticação com as credenciais corretas, 
+           que nada mais acontecerá
+         e) Caso o usuário autentique com sucesso, sem que tenham sido queimadas as 3 tentativas, 
+         a mensagem de autenticação aparece normalmente e a frase com a quantidade de tentativas deve sumir da tela 
+         e deve ser "reiniciada" para as próximas falhas.
+    -->
+
+    <h1>
+      Desempenho do aluno
+    </h1>
+   
+    <p>
+       Nota:
+    </p>
+   
+    <input id="ipt_note">
+   
+    <p>
+       Frequência:
+    </p>
+   
+    <input id="ipt_attendance">
+   
+    <button onclick="but_analisar()" id="but_analise">
+       Analisar aluno
+    </button>
+   
+    <div id="div_show"></div>
+</body>
+</html>
+
+  <script>
+      var ax_number = 3;
+
+      function but_analisar(){
+        var ax_note = Number(ipt_note.value);
+        var ax_attendance = Number(ipt_attendance.value);
+        
+
+        if(ax_note > 8 && ax_note <= 10){
+           div_show.innerHTML = `Aluno acima da média<br>`;
+         }
+         else if(ax_note >= 6 && ax_note <= 8){
+            div_show.innerHTML = `Aluno ficou na média<br>`;
+         }
+         else if(ax_note >= 0 && ax_note < 6){
+            div_show.innerHTML = `Aluno ficou abaixo da média<br>`;
+         }
+         
+         if(ax_attendance >= 75){
+            div_show.innerHTML += `Aluno aprovado por frequência<br>`;
+         }
+         else{
+            div_show.innerHTML += `Aluno reprovado por frequência<br>`;
+         }
+         
+         if(ax_note < 0 || ax_note > 10){
+          ax_number --;
+          alert('Onde já se viu nota <0 ou >10?!');
+          div_show.innerHTML = `Falha de autenticação<br>
+          Você ainda tem ${ax_number} tentativa(s)<br>`;
+         }
+   
+         if(ax_attendance < 0 || ax_attendance > 100){
+          ax_number --;
+          alert('Onde já se viu frequência <0 ou >100?!');
+          div_show.innerHTML = `Falha de autenticação<br>
+          Você ainda tem ${ax_number} tentativa(s)<br>`;
+         }
+
+         if(ax_number == 0){
+            div_show.innerHTML += `Usuário BLOQUEADO! Procure seu gerente!`;
+            but_analise.style.display = "none";
+         }
+
+         if(ax_note >= 0 && ax_note <= 10 && ax_attendance >= 0 && ax_attendance <= 100){
+            ax_number = 3;
+         }
+      }
+      </script>

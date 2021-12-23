@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 12</title>
+</head>
+<body>
+    
+  <!--
+      12. Crie um minissistema de recarga do "cartão fidelidade" do metrô se São Paulo em HTML/JS:
+       a) Solicite ao usuário que informe a quantidade de passagens que deseja adquirir
+       b) Ao clicar em "Comprar", caso a quantidade for entre 8 e 50, implemente as regras entre os 
+        itens c), d) e e). Caso contrário, exiba apenas o alert "Quantidade inválida para o Fidelidade!"
+       c) Caso a quantidade for entre 8 e 19, aplique um desconto de 3% no valor da passagem de metrô
+       d) Caso a quantidade for entre 20 e 49, aplique um desconto de 5% no valor da passagem de metrô
+       e) Caso a quantidade for 50, aplique um desconto de 7% no valor da passagem de metrô
+       f) Considere que o valor da passagem é R$4,40
+       g) Caso a quantidade de passagens veja válida, conforme a regra em b), exiba o valor total a pagar numa frase abaixo do botão 
+        "Comprar". Ex: 50 passagens deve exibir "Total a pagar: R$204.60"
+   -->
+
+   <p>
+       Quantidade de passagens que deseja adquirir:
+   </p>
+
+   <input id="ipt_quantidade" placeholder="Quantidade de passagens">
+
+   <button onclick="but_purchase()">
+       Comprar
+   </button>
+
+   <div id="div_show"></div>
+
+</body>
+</html>
+
+<script>
+    function but_purchase(){
+        var ax_quantidade = Number(ipt_quantidade.value);
+        var ax_total = 0;
+        var ax_price = 4.40;
+        
+        if(ax_quantidade >= 8 && ax_quantidade <= 50){
+            if(ax_quantidade >= 8 && ax_quantidade <= 19){
+                ax_price = ax_price - (ax_price * 0.03);
+                ax_total = ax_quantidade * ax_price;
+                div_show.innerHTML = `Total a pagar: R$ ${ax_total.toFixed(2)}`;
+            }
+            else if(ax_quantidade >= 20 && ax_quantidade <= 49){
+                ax_price = ax_price - (ax_price * 0.05);
+                ax_total = ax_quantidade * ax_price;
+                div_show.innerHTML = `Total a pagar: R$ ${ax_total.toFixed(2)}`;
+            }
+            else if(ax_quantidade == 50){
+               ax_price = ax_price - (ax_price * 0.07);
+               ax_total = ax_quantidade * ax_price;
+               div_show.innerHTML = `Total a pagar: R$ ${(ax_total).toFixed(2)}`;
+            }
+        }
+        else{
+            alert('Quantidade inválida para o Fidelidade!');
+            div_show.innerHTML = ``;
+        }
+    }
+</script>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 4</title>
+</head>
+<body>
+
+    <!--
+       4. Crie um programa em HTML/JS o qual:
+        a) Solicita a frequência do aluno
+        b) Ao clicar em "Analisar frequência", deve aparecer, abaixo dele:
+         A imagem de um turista, caso a frequência for menor que 50 OU
+         A imagem de um aluno estudioso, caso a frequência for a partir de 50 
+    -->
+
+    <p>
+        Frequência do aluno:
+    </p>
+
+    <input id="ipt_student">
+
+    <button onclick="but_frequencia()">
+        Analisar frequência
+    </button><br><br>
+
+    <img src="" style="height: 350px;" id="img_analisar">
+    
+</body>
+</html>
+
+<script>
+
+    function but_frequencia(){
+        var ax_student = Number(ipt_student.value);
+
+        if(ax_student < 50){
+         img_analisar.src = `img/turista.jpg`;
+        }
+        else{
+         img_analisar.src = `img/aluno_estudioso.jpg`;
+        }
+    }
+</script>

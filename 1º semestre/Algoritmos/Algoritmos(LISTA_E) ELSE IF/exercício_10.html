@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 10</title>
+</head>
+<body>
+
+    <!--
+        10. Faça um programa para auxiliar o banco SPTO na análise das contas de seus clientes
+         a) Pergunte ao usuário o nome e o saldo do cliente
+         b) Ao clicar num botão "Verificar Conta"...
+         b.1) Se o saldo for negativo, exiba a frase “Com o saldo de 999.99 o cliente XXXXXXX está com saldo devedor”
+         b.2) Se o saldo estiver entre 0 e 2000, exiba a frase “Com o saldo de 999.99 o cliente XXXXXXX está com saldo NORMAL
+         b.3) Se o saldo estiver entre 2000,01 e 5000, exiba a frase “Com o saldo de 999.99 o cliente XXXXXXX está com saldo ACIMA DA MÉDIA”
+         b.4) Se o saldo estiver acima de 5000, exiba a frase “Com o saldo de 999.99 o cliente XXXXXXX TEM PERFIL DE INVESTIDOR”
+    -->
+
+    <p>
+        Nome do cliente:
+    </p>
+
+    <input id="ipt_name">
+
+    <p>
+        Saldo do cliente:
+    </p>
+
+    <input id="ipt_saldo">
+
+    <button onclick="but_verificar()">
+        Verificar Conta
+    </button>
+
+    <div id="div_cliente"></div>
+    
+</body>
+</html>
+
+<script>
+
+  function but_verificar(){
+      var ax_name = ipt_name.value;
+      var ax_saldo = ipt_saldo.value;
+      div_cliente.inneHTML = ``;
+
+      if(ax_saldo > 5000){
+        div_cliente.innerHTML = `Com o saldo de ${ax_saldo} o cliente ${ax_name} TEM PERFIL DE INVESTIDOR`;
+      }
+      else if(ax_saldo >= 2000.01){
+        div_cliente.innerHTML = `Com o saldo de ${ax_saldo} o cliente ${ax_name} está com saldo ACIMA DA MÉDIA`;
+      }
+      else if(ax_saldo >= 0){
+        div_cliente.innerHTML = `Com o saldo de ${ax_saldo} o cliente ${ax_name} está com saldo NORMAL`;
+      }
+      else{
+        alert(`Com o saldo de ${ax_saldo} o cliente ${ax_name} está com saldo devedor`);
+      }
+  }
+</script>

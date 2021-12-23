@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 5</title>
+</head>
+<body>
+
+  <!--
+      5. Crie um programa em HTML/JS o qual:
+       a) Solicite 2 notas de um aluno
+       b) Ao clicar em "Verificar situação", calcule sua média e...
+       c) Caso a média seja a partir de 6, exiba um alert com "Parabéns, aprovado!"
+       d) Caso a média seja menor que 6, exiba um alert com "Tente outra vez..."
+  -->
+
+  <p>
+      Insira a nota de <u>História</u>:
+  </p>
+
+  <input id="ipt_history">
+
+  <p>
+      Insira a nota de <u>Matemática</u>:
+  </p>
+    
+  <input id="ipt_math">
+
+  <button onclick="but_analisar()">
+    Verificar situação
+  </button>
+
+</body>
+</html>
+
+<script>
+
+    function but_analisar(){
+        var ax_history = Number(ipt_history.value);
+        var ax_math = Number(ipt_math.value);
+        var ax_avg = (ax_history + ax_math) / 2;
+        
+        if(ax_avg >= 6){
+            alert('Parabéns, aprovado!');
+        }
+        else{
+            alert('Tente outra vez...');
+        }
+    }
+</script>

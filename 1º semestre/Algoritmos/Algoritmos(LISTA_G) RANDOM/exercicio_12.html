@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 12</title>
+</head>
+<body>
+
+    <!--
+        12. Faça uma versão melhorada da questão anterior:
+         a) Tenha um botão “Equipe” que quando clicado, mostre abaixo da última avaliação a média de todas as avaliações realizadas. 
+         Ex: "Média geral: 3.9"
+         b) Mostrar também o emoji de acordo com a média.
+         #ficadica: Essa média é a soma de todas as avaliações dividida pela quantidade de avaliações realizadas
+    -->
+
+    <h1>
+        Sistema de avaliação de atendente
+    </h1>
+
+    <button onclick="but_avaliar()">
+        Avaliar
+    </button>
+
+    <button onclick="but_team()">
+        Equipe
+    </button>
+
+    <p id="inner_show1"></p>
+
+    <img src="" id="img_note" style="height: 150px;">
+
+    <p id="inner_show2"></p>
+
+    <img src="" id="img_note1" style="height: 150px;">
+    
+</body>
+</html>
+
+<script>
+    var ax_number = 0;
+    var ax_random = 0;
+    var ax_save = 0;
+
+    function but_avaliar(){
+        ax_number ++;
+        ax_random = Number((Math.random() * 5).toFixed(1));
+        ax_save += ax_random;
+
+        inner_show1.innerHTML = `Nota recebida: ${ax_random}`;
+
+        if(ax_random > 4.5){
+            img_note.src = "Imagens/emoji-muito-feliz.png";
+        }
+        else if(ax_random > 3.5){
+            img_note.src = "Imagens/emoji-feliz.png";
+        }
+        else if(ax_random > 1.5){
+            img_note.src = "Imagens/emoji-neutro.jpg";
+        }
+        else if(ax_random > 0.5){
+            img_note.src = "Imagens/emoji-meio-triste.jpg";
+        }
+        else{
+            img_note.src = "Imagens/emoji-muito-triste.jpg";
+        }
+    }
+
+    function but_team(){
+        var ax_avg = (ax_save/ax_number).toFixed(1);
+        
+        inner_show2.innerHTML = `Média geral: ${ax_avg}`;
+
+        if(ax_avg > 4.5){
+            img_note1.src = "Imagens/emoji-muito-feliz.png";
+        }
+        else if(ax_avg > 3.5){
+            img_note1.src = "Imagens/emoji-feliz.png";
+        }
+        else if(ax_avg > 1.5){
+            img_note1.src = "Imagens/emoji-neutro.jpg";
+        }
+        else if(ax_avg > 0.5){
+            img_note1.src = "Imagens/emoji-meio-triste.jpg";
+        }
+        else{
+            img_note1.src = "Imagens/emoji-muito-triste.jpg";
+        }
+
+
+
+
+
+
+
+
+    }
+</script>

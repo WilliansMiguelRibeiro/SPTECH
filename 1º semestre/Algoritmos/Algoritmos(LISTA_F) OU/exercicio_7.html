@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Exercício 7 </title>
+</head>
+<body>
+
+    <!--
+        7. Crie um programa em HTML/JS o qual:
+        a) Tenha o seguinte texto no topo:
+        Calculadora de cansaço do aluno Bandtec.
+        b) Tenha o texto "Meio de transporte" e uma combo para o usuário escolher o meio de transporte dele, podendo ser:
+        Ônibus
+        Metrô
+        Carro
+        Bicicleta
+        Lotação
+        c) Tenha o botão "Calcular cansaço" que ao clicar mostrar em um alerta o nível de cansaço do usuário.
+        d) Se o meio de transporte escolhido for "Carro" OU "Bicicleta", exiba em um alert: "Tá tranquilo ..."
+        e) Se o meio de transporte escolhido for "Metrô", exiba em um alert: "Um pouco cansado".
+        f) Se o meio de transporte escolhido for "Ônibus" OU "Lotação", exiba em um alert: "Vish ... vive cansado."
+    -->
+
+    <p style="font-size: 20px;"> Calculadora de cansaço do aluno Bandtec. </p>
+
+    <p style="font-size: 20px;"> Meio de transporte </p>
+
+    <select id="sel_transporte">
+        <option value="1"> Ônibus </option>
+        <option value="2"> Metrô </option>
+        <option value="3"> Carro </option>
+        <option value="4"> Bicicleta </option>
+        <option value="5"> Lotação </option>
+    </select><br><br>
+
+    <button onclick="but_corrida()"> Calcular cansaço </button>
+    
+</body>
+</html>
+
+<script>
+    function but_corrida(){
+        var corrida = sel_transporte.value;
+
+        if(corrida == 3 || corrida == 4){
+            alert(`Tá tranquilo ...`);
+        }
+        else if(corrida == 2){
+            alert(`Um pouco cansado`);
+        }
+        else{
+            alert(`Vish ... vive cansado.`);
+        }
+    }
+</script>

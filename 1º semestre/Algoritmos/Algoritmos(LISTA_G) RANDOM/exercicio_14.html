@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 14</title>
+</head>
+<body>
+
+    <!--
+        14. Crie um programa em HTML/JS que simule as fases da lua:
+        a) Ao clicar num botão "Ver a Lua", sorteie um dia do mês entre 1 e 31 e exiba o dia sorteado na página
+        b) De acordo com o dia sorteado mostre uma fase da lua, conforme estes critérios (pode baixar e deixar as imagens locais se preferir):
+         ·Lua nova
+          Caso o dia do mês for entre 1 e 7
+         ·Lua cheia ()
+          Caso o dia do mês for entre 8 e 16
+         ·Lua minguante      
+          Caso o dia do mês for entre 17 e 22
+         ·Lua crescente 
+         Caso o dia do mês for entre 23 e 31
+    -->
+
+    <button onclick="but_moon()">
+        Ver a Lua
+    </button><br><br>
+
+    <div id="div_show"></div><br><br>
+    <img src="" id="img_moon" style="height: 150px;">
+    
+</body>
+</html>
+
+<script>
+  function but_moon(){
+      var ax_random = (Math.random() * 30 + 1).toFixed();
+
+      div_show.innerHTML = `Dia :${ax_random}`;
+
+      if(ax_random >= 23 && ax_random <= 31){
+        img_moon.src = "Imagens/lua_crescente.png";
+      }
+      else if(ax_random >= 17  &&  ax_random <= 22){
+        img_moon.src = "Imagens/lua_minguante.png";
+      }
+      else if(ax_random >= 8 && ax_random <= 16){
+        img_moon.src = "Imagens/lua_cheia.png";
+      }
+      else{
+        img_moon.src = "Imagens/lua_nova.png";
+      }
+  }
+</script>

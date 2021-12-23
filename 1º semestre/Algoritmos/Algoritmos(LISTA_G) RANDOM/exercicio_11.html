@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 11</title>
+</head>
+<body>
+
+    <!--
+        11. Crie um programa em HTML/JS que simule um sistema de avaliação de atendente:
+         a) Ao clicar num botão "Avaliar". Esse botão vai gerar uma avaliação aleatória entre 0 e 5 (números reais com uma casa decimal)
+         b) Mostra, abaixo, a nota da avaliação. Ex: "Nota recebida: 4.5"
+         c) De acordo com a avaliação aleatória recebida, mostre um emoji, segundo os seguintes critérios 
+         (pode baixar e deixar as imagens locais se preferir):
+          Muito triste (https://cdn.shopify.com/s/files/1/1061/1924/files/Sad_Face_Emoji_Icon_60x60.png):
+           Caso a nota seja entre 0 e 0,5
+          Meio triste (https://cdn.shopify.com/s/files/1/1061/1924/files/Confused_Face_Emoji_60x60.png):
+           Caso a nota seja entre mais de 0,5 e 1,5
+          Neutro (https://cdn.shopify.com/s/files/1/1061/1924/files/Unamused_Face_Emoji_Icon_60x60.png):
+           Caso a nota seja entre mais de 1,5 e 3,5
+          Feliz (https://cdn.shopify.com/s/files/1/1061/1924/files/Slightly_Smiling_Face_Emoji_Icon_60x60.png):
+           Caso a nota seja entre mais de 3,5 e 4,5
+          Muito Feliz (https://cdn.shopify.com/s/files/1/1061/1924/files/Smiling_Emoji_with_Eyes_Opened_Icon_60x60.png):
+           Caso a nota seja entre mais de 4,5
+    -->
+    
+    <h1>
+        Sistema de avaliação de atendente
+    </h1>
+
+    <button onclick="but_avaliar()">
+        Avaliar
+    </button><br><br>
+
+    <p id="inner_show"></p>
+
+    <img src="" id="img_note" style="height: 150px;">
+
+</body>
+</html>
+
+<script>
+    function but_avaliar(){
+        var ax_random = (Math.random() * 5).toFixed(1);
+
+        inner_show.innerHTML = `Nota recebida: ${ax_random}`;
+
+        if(ax_random > 4.5){
+            img_note.src = "Imagens/emoji-muito-feliz.png";
+        }
+        else if(ax_random > 3.5){
+            img_note.src = "Imagens/emoji-feliz.png";
+        }
+        else if(ax_random > 1.5){
+            img_note.src = "Imagens/emoji-neutro.jpg";
+        }
+        else if(ax_random > 0.5){
+            img_note.src = "Imagens/emoji-meio-triste.jpg";
+        }
+        else{
+            img_note.src = "Imagens/emoji-muito-triste.jpg";
+        }
+    }
+</script>

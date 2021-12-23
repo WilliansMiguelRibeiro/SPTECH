@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 17</title>
+</head>
+<body>
+
+    <!--
+        17. Crie um programa em HTML/JS o qual simule um jogo de dadinho, onde:
+        a) Tenha o seguinte texto:
+            Jogador 1: 0
+            Jogador 2: 0
+            Empate: 0
+        b) Ao clicar no botão “Jogar” sorteie um valor de 1 a 6 para o dadinho 1 e outro valor para o dadinho 2 e some 1 no placar do item a) 
+        de acordo com o resultado.
+        c) Emita a mensagem “O jogador X está vencendo”, onde X é o nº do jogador vencedor. Caso esteja empatado o jogo, a mensagem será “Jogo empatado”
+    -->
+
+   <p>
+    Jogador 1: <b id="inner_pontuar1">0</b><br>
+    Jogador 2: <b id="inner_pontuar2">0</b><br>
+    Empate: <b id="inner_pontuar3">0</b> 
+   </p>
+
+   <button onclick="but_play()">
+       Jogar
+   </button><br><br>
+
+   <div id="div_show"></div>
+    
+</body>
+</html>
+
+<script>
+    var ax_soma1 = 0;
+    var ax_soma2 = 0;
+    var ax_soma3 = 0;
+
+    function but_play(){
+        var ax_random1 = (Math.random() * 5 + 1).toFixed();
+        var ax_random2 = (Math.random() * 5 + 1).toFixed();
+
+        div_show.innerHTML = `Valor do dadinho 1 : ${ax_random1}<br>
+        Valor do dadinho 2 : ${ax_random2}<br>`;
+
+        if(ax_random1 > ax_random2){
+           ax_soma1 ++;
+           inner_pontuar1.innerHTML = `${ax_soma1}`;
+        }
+        else if(ax_random2 > ax_random1){
+           ax_soma2 ++;
+           inner_pontuar2.innerHTML = `${ax_soma2}`;
+        }
+        else{
+          ax_soma3 ++;
+          inner_pontuar3.innerHTML = `${ax_soma3}`;
+        }
+
+        if(ax_soma1 > ax_soma2){
+            div_show.innerHTML += `O jogador 1 está vencendo`;
+        }
+        else if(ax_soma2 > ax_soma1){
+            div_show.innerHTML += `O jogador 2 está vencendo`;
+        }
+        else{
+            div_show.innerHTML += `Jogo empatado`;
+        }
+    }
+</script>
